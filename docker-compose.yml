@@ -1,0 +1,11 @@
+services:
+  converter:
+    build: .
+    container_name: negative-converter
+    restart: unless-stopped
+    environment:
+      - POLL_INTERVAL=5
+    volumes:
+      - ./negatives:/watch
+      - ./positives:/output
+ 
